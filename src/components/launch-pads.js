@@ -6,6 +6,7 @@ import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
+import { IconButton } from "@chakra-ui/core";
 
 const PAGE_SIZE = 12;
 
@@ -59,10 +60,10 @@ function LaunchPadItem({ launchPad }) {
               Active
             </Badge>
           ) : (
-            <Badge px="2" variant="solid" variantColor="red">
-              Retired
-            </Badge>
-          )}
+              <Badge px="2" variant="solid" variantColor="red">
+                Retired
+              </Badge>
+            )}
           <Box
             color="gray.500"
             fontWeight="semibold"
@@ -88,6 +89,16 @@ function LaunchPadItem({ launchPad }) {
         <Text color="gray.500" fontSize="sm">
           {launchPad.vehicles_launched.join(", ")}
         </Text>
+
+        <Box
+          mt="1"
+          fontWeight="semibold"
+          as="h4"
+          lineHeight="tight"
+          isTruncated
+        >
+          <IconButton aria-label="Search database" icon="star" />
+        </Box>
       </Box>
     </Box>
   );
