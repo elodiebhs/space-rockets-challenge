@@ -21,6 +21,8 @@ import {
   StatGroup,
 } from "@chakra-ui/core";
 
+import { Tooltip } from "@chakra-ui/core";
+
 import { useSpaceX } from "../utils/use-space-x";
 import { formatDateTime } from "../utils/format-date";
 import Error from "./error";
@@ -124,7 +126,10 @@ function TimeAndLocation({ launch }) {
           </Box>
         </StatLabel>
         <StatNumber fontSize={["md", "xl"]}>
-          {formatDateTime(launch.launch_date_local)}
+          {/* change to do here */}
+          <Tooltip label={`Your local time launch: ${formatDateTime(launch.launch_date_local)}`}>  
+						{formatDateTime(launch.launch_date_local)}
+					 </Tooltip>
         </StatNumber>
         <StatHelpText>{timeAgo(launch.launch_date_utc)}</StatHelpText>
       </Stat>
