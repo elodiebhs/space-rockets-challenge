@@ -15,6 +15,7 @@ import {
   Spinner,
   Stack,
   AspectRatioBox,
+  IconButton,
 } from "@chakra-ui/core";
 
 import { useSpaceX } from "../utils/use-space-x";
@@ -52,13 +53,18 @@ export default function LaunchPad() {
         ]}
       />
       <Header launchPad={launchPad} />
+
+      <IconButton aria-label="Search database" icon="star" />
+
       <Box m={[3, 6]}>
-        <LocationAndVehicles launchPad={launchPad} />
+        <LocationAndVehicles launchPad={launchPad}  />
         <Text color="gray.700" fontSize={["md", null, "lg"]} my="8">
           {launchPad.details}
+          
         </Text>
         <Map location={launchPad.location} />
         <RecentLaunches launches={launches} />
+        
       </Box>
     </div>
   );
