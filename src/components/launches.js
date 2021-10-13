@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Box, Image, SimpleGrid, Text, Flex } from "@chakra-ui/core";
+import { Badge, Box, Image, SimpleGrid, Text, Flex, IconButton } from "@chakra-ui/core";
 import { format as timeAgo } from "timeago.js";
 import { Link } from "react-router-dom";
 
@@ -116,6 +116,7 @@ export function LaunchItem({ launch }) {
             {timeAgo(launch.launch_date_utc)}
           </Text>
         </Flex>
+        <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" />
       </Box>
     </Box>
   );
