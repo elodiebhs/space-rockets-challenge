@@ -23,6 +23,7 @@ export default function Launches() {
     }
   );
   console.log(data, error);
+
   return (
     <div>
 
