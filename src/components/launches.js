@@ -8,6 +8,7 @@ import { formatDate } from "../utils/format-date";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
+import FavDrawer from "./favoritesLaunches"
 
 const PAGE_SIZE = 12;
 
@@ -23,6 +24,9 @@ export default function Launches() {
   console.log(data, error);
   return (
     <div>
+
+      <FavDrawer />
+
       <Breadcrumbs
         items={[{ label: "Home", to: "/" }, { label: "Launches" }]}
       />
@@ -85,10 +89,10 @@ export function LaunchItem({ launch }) {
               Successful
             </Badge>
           ) : (
-            <Badge px="2" variant="solid" variantColor="red">
-              Failed
-            </Badge>
-          )}
+              <Badge px="2" variant="solid" variantColor="red">
+                Failed
+              </Badge>
+            )}
           <Box
             color="gray.500"
             fontWeight="semibold"
