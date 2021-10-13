@@ -7,7 +7,7 @@ import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
 import { IconButton } from "@chakra-ui/core";
-import FavDrawerPads from "./favoritesLaunchPads"
+import FavDrawerPads from "../components/Favorites/favoritesLaunchPads"
 
 const PAGE_SIZE = 12;
 

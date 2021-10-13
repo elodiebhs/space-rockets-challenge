@@ -19,7 +19,6 @@ import {
   Stack,
   AspectRatioBox,
   StatGroup,
-  IconButton,
 } from "@chakra-ui/core";
 
 import { Tooltip } from "@chakra-ui/core";
@@ -28,6 +27,7 @@ import { useSpaceX } from "../utils/use-space-x";
 import { formatDateTime } from "../utils/format-date";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
+import IconButtonFavLaunches from "./Favorites/iconButtonFavLaunches";
 
 export default function Launch() {
   let { launchId } = useParams();
@@ -152,7 +152,7 @@ function TimeAndLocation({ launch }) {
         <StatHelpText>{launch.launch_site.site_name}</StatHelpText>
       </Stat>
 
-      <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" />
+      <IconButtonFavLaunches/>
     </SimpleGrid>
   );
 }

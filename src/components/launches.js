@@ -8,7 +8,8 @@ import { formatDate } from "../utils/format-date";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
-import FavDrawer from "./favoritesLaunches"
+import FavDrawer from "./Favorites/favoritesLaunches";
+import IconButtonFavLaunches from "./Favorites/iconButtonFavLaunches";
 
 const PAGE_SIZE = 12;
 
@@ -120,7 +121,7 @@ export function LaunchItem({ launch }) {
             {timeAgo(launch.launch_date_utc)}
           </Text>
         </Flex>
-        <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" />
+        <IconButtonFavLaunches/>
       </Box>
     </Box>
   );
