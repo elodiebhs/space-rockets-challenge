@@ -10,6 +10,7 @@ import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import FavDrawer from "./Favorites/favoritesLaunches";
 import IconButtonFavLaunches from "./Favorites/iconButtonFavLaunches";
+import {useDispatch} from 'react-redux';
 
 const PAGE_SIZE = 12;
 
@@ -52,6 +53,16 @@ export default function Launches() {
 }
 
 export function LaunchItem({ launch }) {
+  const dispatch = useDispatch();
+
+  const addToFavorite = ()=>{
+    console.log("add fav",launch);
+    dispatch({
+      type:"ADD_FAVORITE",
+      payload: launch
+    })
+  }
+
   return (
     <Box
       as={Link}
@@ -122,7 +133,7 @@ export function LaunchItem({ launch }) {
             {timeAgo(launch.launch_date_utc)}
           </Text>
         </Flex>
-        <IconButtonFavLaunches />
+        <IconButtonFavLaunches onClick={addToFavorite}/>
       </Box>
     </Box>
   );

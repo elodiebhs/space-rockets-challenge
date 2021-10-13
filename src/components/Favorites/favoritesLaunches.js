@@ -10,10 +10,14 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/core";
+import {useSelector} from 'react-redux';
+import {LaunchItem} from '../launches'
+
 
 export default function FavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const favorites = useSelector(state => state.favoriteReducer.favorites)
 
   return (
     <>
@@ -29,10 +33,12 @@ export default function FavDrawer() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Your Favorites Launches</DrawerHeader>
+          <DrawerHeader>Your Favorites Launches {favorites.length}</DrawerHeader>
 
           <DrawerBody>
-
+            {
+              favorites && favorites.map(launch=> <LaunchItem launch={launch} key={launch.flight_number} />)
+            }
           </DrawerBody>
 
         </DrawerContent>

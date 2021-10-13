@@ -3,20 +3,20 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider, CSSReset } from "@chakra-ui/core";
 import { Provider } from 'react-redux';
-import store from './redux/store'
+import store from './_redux/store'
 
 import App from "./components/app";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Provider store={store}>
+    <Provider store={store}>
+      <Router>
         <ThemeProvider>
           <CSSReset />
           <App />
         </ThemeProvider>
-        </Provider>
-    </Router>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
