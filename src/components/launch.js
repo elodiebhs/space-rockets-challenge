@@ -28,6 +28,7 @@ import { formatDateTime } from "../utils/format-date";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import IconButtonFavLaunches from "./Favorites/iconButtonFavLaunches";
+import { useDispatch } from 'react-redux';
 
 export default function Launch() {
   let { launchId } = useParams();
@@ -117,6 +118,14 @@ function Header({ launch }) {
 }
 
 function TimeAndLocation({ launch }) {
+  const dispatch = useDispatch();
+  const addToFavorite = () => {
+    console.log("add fav", launch);
+    dispatch({
+      type: "ADD_FAVORITE",
+      payload: launch
+    })
+  }
   return (
     <SimpleGrid columns={[1, 1, 2]} borderWidth="1px" p="4" borderRadius="md">
       <Stat>
@@ -151,7 +160,10 @@ function TimeAndLocation({ launch }) {
         </StatNumber>
         <StatHelpText>{launch.launch_site.site_name}</StatHelpText>
       </Stat>
-      <IconButtonFavLaunches />
+      <Box display="flex" >
+        <IconButtonFavLaunches onClick={addToFavorite} />
+        <Text display="flex" alignItems="center" fontSize="xs" padding="1%">Add/Delete from favorites</Text>
+      </Box>
     </SimpleGrid>
   );
 }
