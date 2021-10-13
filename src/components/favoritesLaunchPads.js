@@ -11,7 +11,7 @@ import {
   Button,
 } from "@chakra-ui/core";
 
-export default function FavDrawer() {
+export default function FavDrawerPads() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
@@ -29,7 +29,7 @@ export default function FavDrawer() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Your Favorites Launches</DrawerHeader>
+          <DrawerHeader>Your Favorites Launch Pads</DrawerHeader>
 
           <DrawerBody>
             

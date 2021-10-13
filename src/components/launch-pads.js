@@ -7,6 +7,7 @@ import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
 import { IconButton } from "@chakra-ui/core";
+import FavDrawerPads from "./favoritesLaunchPads"
 
 const PAGE_SIZE = 12;
 
@@ -20,6 +21,8 @@ export default function LaunchPads() {
 
   return (
     <div>
+
+      <FavDrawerPads />
       <Breadcrumbs
         items={[{ label: "Home", to: "/" }, { label: "Launch Pads" }]}
       />
