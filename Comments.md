@@ -5,4 +5,5 @@ I would have normally used branches per tasks but has I was working alone I didn
 I had to to some research on chakra UI, I never used it before but it seems very similar than Material UI. I hadded the tooltip. It took me 20 min. I had to be carefull to use tooltip from version V.0.8.
 
 #Fav
-I started with adding a Icon Button to pages.
+I started with creating 2 different components for Icon Fav Button lauches and icon fav button Pads. Took me 30 min
+I created 2 components for drawers lauches and lauches pads. Took me 30 min
