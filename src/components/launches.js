@@ -121,7 +121,7 @@ export function LaunchItem({ launch }) {
             {timeAgo(launch.launch_date_utc)}
           </Text>
         </Flex>
-        <IconButtonFavLaunches/>
+        <IconButtonFavLaunches />
       </Box>
     </Box>
   );

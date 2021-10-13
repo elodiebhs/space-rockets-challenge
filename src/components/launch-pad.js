@@ -15,13 +15,13 @@ import {
   Spinner,
   Stack,
   AspectRatioBox,
-  IconButton,
 } from "@chakra-ui/core";
 
 import { useSpaceX } from "../utils/use-space-x";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import { LaunchItem } from "./launches";
+import IconButtonFavPads from "./Favorites/iconButtonFavPads";
 
 export default function LaunchPad() {
   let { launchPadId } = useParams();
@@ -54,17 +54,17 @@ export default function LaunchPad() {
       />
       <Header launchPad={launchPad} />
 
-      <IconButton size="sm" isRound="true" aria-label="star" icon="star" />
+
 
       <Box m={[3, 6]}>
-        <LocationAndVehicles launchPad={launchPad}  />
+        <LocationAndVehicles launchPad={launchPad} />
         <Text color="gray.700" fontSize={["md", null, "lg"]} my="8">
           {launchPad.details}
-          
+
         </Text>
         <Map location={launchPad.location} />
         <RecentLaunches launches={launches} />
-        
+
       </Box>
     </div>
   );
@@ -107,10 +107,10 @@ function Header({ launchPad }) {
             Active
           </Badge>
         ) : (
-          <Badge variantColor="red" fontSize={["sm", "md"]}>
-            Retired
-          </Badge>
-        )}
+            <Badge variantColor="red" fontSize={["sm", "md"]}>
+              Retired
+            </Badge>
+          )}
       </Stack>
     </Flex>
   );
@@ -140,6 +140,7 @@ function LocationAndVehicles({ launchPad }) {
           {launchPad.vehicles_launched.join(", ")}
         </StatNumber>
       </Stat>
+      <IconButtonFavPads />
     </SimpleGrid>
   );
 }

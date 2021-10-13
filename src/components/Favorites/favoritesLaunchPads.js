@@ -32,7 +32,7 @@ export default function FavDrawerPads() {
           <DrawerHeader>Your Favorites Launch Pads</DrawerHeader>
 
           <DrawerBody>
-            
+
           </DrawerBody>
 
         </DrawerContent>

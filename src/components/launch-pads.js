@@ -6,8 +6,8 @@ import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
-import { IconButton } from "@chakra-ui/core";
 import FavDrawerPads from "../components/Favorites/favoritesLaunchPads"
+import IconButtonFavPads from "./Favorites/iconButtonFavPads";
 
 const PAGE_SIZE = 12;
 
@@ -100,7 +100,7 @@ function LaunchPadItem({ launchPad }) {
           lineHeight="tight"
           isTruncated
         >
-          <IconButton size="sm" isRound="true" aria-label="star" icon="star" />
+          <IconButtonFavPads />
         </Box>
       </Box>
     </Box>

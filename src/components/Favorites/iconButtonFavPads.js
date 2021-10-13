@@ -1,7 +1,7 @@
 import React from "react";
 import { IconButton } from "@chakra-ui/core";
 
-export default function IconButtonFavLaunches(props) {
+export default function IconButtonFavPads(props) {
 
   const hello = "hello"
 

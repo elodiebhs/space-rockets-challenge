@@ -151,8 +151,7 @@ function TimeAndLocation({ launch }) {
         </StatNumber>
         <StatHelpText>{launch.launch_site.site_name}</StatHelpText>
       </Stat>
-
-      <IconButtonFavLaunches/>
+      <IconButtonFavLaunches />
     </SimpleGrid>
   );
 }

@@ -32,7 +32,7 @@ export default function FavDrawer() {
           <DrawerHeader>Your Favorites Launches</DrawerHeader>
 
           <DrawerBody>
-            
+
           </DrawerBody>
 
         </DrawerContent>
