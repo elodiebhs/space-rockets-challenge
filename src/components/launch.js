@@ -19,6 +19,7 @@ import {
   Stack,
   AspectRatioBox,
   StatGroup,
+  IconButton,
 } from "@chakra-ui/core";
 
 import { Tooltip } from "@chakra-ui/core";
@@ -106,10 +107,10 @@ function Header({ launch }) {
             Successful
           </Badge>
         ) : (
-          <Badge variantColor="red" fontSize={["xs", "md"]}>
-            Failed
-          </Badge>
-        )}
+            <Badge variantColor="red" fontSize={["xs", "md"]}>
+              Failed
+            </Badge>
+          )}
       </Stack>
     </Flex>
   );
@@ -127,9 +128,9 @@ function TimeAndLocation({ launch }) {
         </StatLabel>
         <StatNumber fontSize={["md", "xl"]}>
           {/* change to do here */}
-          <Tooltip label={`Your local time launch: ${formatDateTime(launch.launch_date_local)}`}>  
-						{formatDateTime(launch.launch_date_local)}
-					 </Tooltip>
+          <Tooltip label={`Your local time launch: ${formatDateTime(launch.launch_date_local)}`}>
+            {formatDateTime(launch.launch_date_local)}
+          </Tooltip>
         </StatNumber>
         <StatHelpText>{timeAgo(launch.launch_date_utc)}</StatHelpText>
       </Stat>
@@ -150,6 +151,8 @@ function TimeAndLocation({ launch }) {
         </StatNumber>
         <StatHelpText>{launch.launch_site.site_name}</StatHelpText>
       </Stat>
+
+      <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" />
     </SimpleGrid>
   );
 }

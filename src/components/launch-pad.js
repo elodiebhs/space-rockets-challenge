@@ -54,7 +54,7 @@ export default function LaunchPad() {
       />
       <Header launchPad={launchPad} />
 
-      <IconButton aria-label="Search database" icon="star" />
+      <IconButton size="sm" isRound="true" aria-label="star" icon="star" />
 
       <Box m={[3, 6]}>
         <LocationAndVehicles launchPad={launchPad}  />

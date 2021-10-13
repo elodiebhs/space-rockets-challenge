@@ -97,7 +97,7 @@ function LaunchPadItem({ launchPad }) {
           lineHeight="tight"
           isTruncated
         >
-          <IconButton aria-label="Search database" icon="star" />
+          <IconButton size="sm" isRound="true" aria-label="star" icon="star" />
         </Box>
       </Box>
     </Box>
