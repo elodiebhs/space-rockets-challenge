@@ -29,15 +29,17 @@ export default function FavDrawer() {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
+        scrollBehavior={'inside'} 
+        blockScrollOnMount={false}
       >
         <DrawerOverlay />
-        <DrawerContent>
+        <DrawerContent blockScrollOnMount={false}>
           <DrawerCloseButton />
-          <DrawerHeader>Your Favorites Launches {favorites.length}</DrawerHeader>
+          <DrawerHeader>Your have {favorites.length} favorite item(s) </DrawerHeader>
 
           <DrawerBody>
             {
-              favorites && favorites.map(launch=> <LaunchItem launch={launch} key={launch.flight_number} />)
+              favorites && favorites.map(launch=> <LaunchItem launch={launch}  />)
             }
           </DrawerBody>
 

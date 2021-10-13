@@ -135,6 +135,8 @@ export function LaunchItem({ launch }) {
         </Flex>
         <IconButtonFavLaunches onClick={addToFavorite}/>
       </Box>
+      
     </Box>
+    
   );
 }
