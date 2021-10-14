@@ -16,5 +16,11 @@ export function formatDateTime(timestamp) {
     minute: "numeric",
     second: "numeric",
     timeZoneName: "short",
+    timezone: "UTC"
   }).format(new Date(timestamp));
+}
+
+//Get user time
+export function dateUser(){
+  return Intl.DateTimeFormat().resolvedOptions().timeZone
 }

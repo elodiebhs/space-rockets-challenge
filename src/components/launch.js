@@ -22,13 +22,13 @@ import {
 } from "@chakra-ui/core";
 
 import { Tooltip } from "@chakra-ui/core";
-
 import { useSpaceX } from "../utils/use-space-x";
 import { formatDateTime } from "../utils/format-date";
 import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import IconButtonFavLaunches from "./Favorites/iconButtonFavLaunches";
 import { useDispatch } from 'react-redux';
+import {dateUser} from "../utils/format-date"
 
 export default function Launch() {
   let { launchId } = useParams();
@@ -137,8 +137,8 @@ function TimeAndLocation({ launch }) {
         </StatLabel>
         <StatNumber fontSize={["md", "xl"]}>
           {/* change to do here */}
-          <Tooltip label={`Your local time launch: ${formatDateTime(launch.launch_date_local)}`}>
-            {formatDateTime(launch.launch_date_local)}
+          <Tooltip label={`Your local time launch:  ${dateUser(launch.launch_date_local)}`}>
+            {formatDateTime(launch.launch_date_utc)}
           </Tooltip>
         </StatNumber>
         <StatHelpText>{timeAgo(launch.launch_date_utc)}</StatHelpText>
