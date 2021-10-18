@@ -27,6 +27,6 @@ export default function Animation() {
       fontSize="lg"
     >
       ¡SPACE·R0CKETS!
-</Text>
+    </Text>
   </animated.div>
 }

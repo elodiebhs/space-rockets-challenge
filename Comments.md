@@ -14,3 +14,6 @@ To find user timezone :
 #Fav
 I started with creating 2 different components for Icon Fav Button lauches and icon fav button Pads. Took me 30 min
 I created 2 components for drawers lauches and lauches pads. Took me 30 min
+
+#Animation
+- Added aniation in title Space Rockets
