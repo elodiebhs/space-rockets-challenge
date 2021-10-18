@@ -46,6 +46,8 @@ function favoritePadsReducer(state = initialStatePad, action) {
     case "ADD_FAVORITEPAD":
       const useritem = action.payload;
       const favoritesPad = state.favoritesPad.filter(item => item.location.name !== useritem.location.name);
+      console.log("user pdas", useritem);
+      console.log("fv pdas", favoritesPad);
       if (favoritesPad.length !== state.favoritesPad.length) {
         return { ...state, favoritesPad };
       }

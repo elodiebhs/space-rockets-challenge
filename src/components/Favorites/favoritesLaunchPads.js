@@ -11,7 +11,7 @@ import {
   Button,
 } from "@chakra-ui/core";
 import {useSelector} from 'react-redux';
-import LaunchPadItem from "../launch-pads"
+import {LaunchPadItem} from "../launch-pads"
 
 
 export default function FavDrawerPads() {

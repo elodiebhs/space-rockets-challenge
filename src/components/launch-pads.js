@@ -21,7 +21,7 @@ export default function LaunchPads(props) {
       limit: PAGE_SIZE,
     }
   );
-  console.log(data, error);
+  // console.log(data, error);
 
   return (
     <div>
@@ -49,7 +49,7 @@ export default function LaunchPads(props) {
   );
 }
 
-function LaunchPadItem({ launchPad }) {
+export function LaunchPadItem({ launchPad }) {
 
   const dispatch = useDispatch();
 
