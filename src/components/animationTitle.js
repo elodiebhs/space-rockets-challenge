@@ -9,10 +9,10 @@ export default function Animation() {
   const [flip, set] = useState(false)
   const props = useSpring({
     to: [
-      { opacity: 1, color: '#white' },
+      { opacity: 1, color: 'white', scale: 1 },
       { opacity: 0, color: '#0000ff' },
     ],
-    from: { opacity: 0, color: '4d4dff' },
+    from: { opacity: 0, color: '#4d4dff', scale: .8 },
     reset: true,
     reverse: flip,
     delay: 15,
