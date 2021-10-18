@@ -4,12 +4,17 @@ const initialState = {
   counter: 0,
 }
 
+const initialStatePad = {
+  favoritesPad: [],
+  counter: 0,
+}
+
 function favoriteReducer(state = initialState, action) {
   switch (action.type) {
     case "ADD_FAVORITE":
       const useritem = action.payload;
-      const favorites = state.favorites.filter(item => item.flight_number != useritem.flight_number);
-      if (favorites.length != state.favorites.length) {
+      const favorites = state.favorites.filter(item => item.flight_number !== useritem.flight_number);
+      if (favorites.length !== state.favorites.length) {
         return { ...state, favorites };
       }
       return {
@@ -36,7 +41,23 @@ function favoriteReducer(state = initialState, action) {
   }
 }
 
+function favoritePadsReducer(state = initialStatePad, action) {
+  switch (action.type) {
+    case "ADD_FAVORITEPAD":
+      const useritem = action.payload;
+      const favoritesPad = state.favoritesPad.filter(item => item.location.name !== useritem.location.name);
+      if (favoritesPad.length !== state.favoritesPad.length) {
+        return { ...state, favoritesPad };
+      }
+      return {
+        ...state, favoritesPad: [...state.favoritesPad, useritem]
+      }
+    default:
+      return state
+  }
+}
 
-const rootReducer = combineReducers({ favoriteReducer });
+
+const rootReducer = combineReducers({ favoriteReducer,favoritePadsReducer });
 
 export default rootReducer;

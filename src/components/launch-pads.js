@@ -8,16 +8,20 @@ import LoadMoreButton from "./load-more-button";
 import { useSpaceXPaginated } from "../utils/use-space-x";
 import FavDrawerPads from "../components/Favorites/favoritesLaunchPads"
 import IconButtonFavPads from "./Favorites/iconButtonFavPads";
+import { useDispatch } from 'react-redux';
+
 
 const PAGE_SIZE = 12;
 
-export default function LaunchPads() {
+
+export default function LaunchPads(props) {
   const { data, error, isValidating, size, setSize } = useSpaceXPaginated(
     "/launchpads",
     {
       limit: PAGE_SIZE,
     }
   );
+  console.log(data, error);
 
   return (
     <div>
@@ -46,6 +50,16 @@ export default function LaunchPads() {
 }
 
 function LaunchPadItem({ launchPad }) {
+
+  const dispatch = useDispatch();
+
+  const addPadToFavorite = () => {
+    console.log("add fav", launchPad);
+    dispatch({
+      type: "ADD_FAVORITEPAD",
+      payload: launchPad
+    })
+  }
   return (
     <Box
       boxShadow="md"
@@ -106,12 +120,13 @@ function LaunchPadItem({ launchPad }) {
 
           </Box>
         </Box>
-        <Box display="flex" padding="2%">
-          <IconButtonFavPads />
-          <Text display="flex" alignItems="center" fontSize="xs">Add/Delete from favorites</Text>
-        </Box>
-
       </Box>
+      <Box display="flex" padding="2%">
+        <IconButtonFavPads onClick={addPadToFavorite} />
+        <Text padding="2%" display="flex" alignItems="center" fontSize="xs">Add/Delete from favorites</Text>
+      </Box>
+
+
     </Box>
   );
 }

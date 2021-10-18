@@ -10,10 +10,14 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/core";
+import {useSelector} from 'react-redux';
+import LaunchPadItem from "../launch-pads"
+
 
 export default function FavDrawerPads() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const favoritesPad = useSelector(state => state.favoritePadsReducer.favoritesPad)
 
   return (
     <>
@@ -31,10 +35,13 @@ export default function FavDrawerPads() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Your Favorites Launch Pads</DrawerHeader>
+          <DrawerHeader>Your have {favoritesPad.length} favorite item(s)</DrawerHeader>
 
+    
           <DrawerBody>
-
+            {
+               favoritesPad.map( launchPad=> <LaunchPadItem key={launchPad.site_id} launchPad={launchPad} />)
+            }
           </DrawerBody>
 
         </DrawerContent>

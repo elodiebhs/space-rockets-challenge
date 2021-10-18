@@ -6,6 +6,6 @@ export default function IconButtonFavPads(props) {
   const hello = "hello"
 
   return (
-    <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" />
+    <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" onClick={props.onClick} />
   );
 }

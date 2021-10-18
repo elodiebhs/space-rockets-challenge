@@ -39,7 +39,7 @@ export default function FavDrawer() {
 
           <DrawerBody>
             {
-              favorites && favorites.map(launch=> <LaunchItem launch={launch}  />)
+               favorites.map(launch=> <LaunchItem launch={launch}  />)
             }
           </DrawerBody>
 
