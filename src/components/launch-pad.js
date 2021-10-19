@@ -22,6 +22,7 @@ import Error from "./error";
 import Breadcrumbs from "./breadcrumbs";
 import { LaunchItem } from "./launches";
 import IconButtonFavPads from "./Favorites/iconButtonFavPads";
+import { useDispatch } from 'react-redux';
 
 export default function LaunchPad() {
   let { launchPadId } = useParams();
@@ -117,6 +118,15 @@ function Header({ launchPad }) {
 }
 
 function LocationAndVehicles({ launchPad }) {
+  const dispatch = useDispatch();
+
+  const addPadToFavorite = () => {
+    console.log("add fav", launchPad);
+    dispatch({
+      type: "ADD_FAVORITEPAD",
+      payload: launchPad
+    })
+  }
   return (
     <SimpleGrid columns={[1, 1, 2]} borderWidth="1px" p="4" borderRadius="md">
       <Stat>
@@ -140,7 +150,12 @@ function LocationAndVehicles({ launchPad }) {
           {launchPad.vehicles_launched.join(", ")}
         </StatNumber>
       </Stat>
-      <IconButtonFavPads />
+      <Box display="flex" >
+      <IconButtonFavPads onClick={addPadToFavorite} />
+        <Text display="flex" alignItems="center" fontSize="xs" padding="1%">Add/Delete from favorites</Text>
+      </Box>
+
+      
     </SimpleGrid>
   );
 }

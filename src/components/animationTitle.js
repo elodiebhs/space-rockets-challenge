@@ -19,7 +19,8 @@ export default function Animation() {
     config: config.molasses,
     onRest: () => set(!flip),
   })
-  return <animated.div style={props}>
+  return <animated.div style={props} >
+ 
     <Text
       fontFamily="mono"
       letterSpacing="2px"

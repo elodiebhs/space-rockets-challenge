@@ -23,7 +23,7 @@ export default function Launches() {
       sort: "launch_date_utc",
     }
   );
-  console.log(data, error);
+  // console.log(data, error);
 
   return (
     <div>
@@ -39,7 +39,9 @@ export default function Launches() {
           data
             .flat()
             .map((launch) => (
+            
               <LaunchItem launch={launch} key={launch.flight_number} />
+             
             ))}
       </SimpleGrid>
       <LoadMoreButton
@@ -47,6 +49,7 @@ export default function Launches() {
         data={data}
         pageSize={PAGE_SIZE}
         isLoadingMore={isValidating}
+        
       />
     </div>
   );
