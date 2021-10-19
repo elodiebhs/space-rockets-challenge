@@ -18,4 +18,7 @@ I created 2 components for drawers lauches and lauches pads. Took me 30 min
 #Animation
 - Added aniation in title Space Rockets using Spring React
 - Added hover on fav button using react-hover-animation
--
+
+
+#Cypress
+- yarn run cypress open
