@@ -39,9 +39,10 @@ export default function Launches() {
           data
             .flat()
             .map((launch) => (
-            
-              <LaunchItem launch={launch} key={launch.flight_number} />
-             
+              <div className= "LauchesElements">
+                <LaunchItem launch={launch} key={launch.flight_number} />
+              </div>
+
             ))}
       </SimpleGrid>
       <LoadMoreButton
@@ -49,7 +50,7 @@ export default function Launches() {
         data={data}
         pageSize={PAGE_SIZE}
         isLoadingMore={isValidating}
-        
+
       />
     </div>
   );
@@ -145,7 +146,7 @@ export function LaunchItem({ launch }) {
       </Box>
       <Box display="flex" padding="2%">
         <IconButtonFavLaunches onClick={addToFavorite} />
-        <Text  padding="2%" display="flex" alignItems="center" fontSize="xs">Add/Delete from favorites</Text>
+        <Text padding="2%" display="flex" alignItems="center" fontSize="xs">Add/Delete from favorites</Text>
       </Box>
     </Box>
 
