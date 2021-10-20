@@ -14,7 +14,7 @@ To find user timezone :
 #Add a "favorites"
 I started with creating 2 different components for IconButtonFavLauches and iconButtonFavPads. Took me 30 min
 I created 2 components for drawers: one for launches and one for launches pads. Took me 30 min
-Then I added my logics to add/delete an item to favorites. I also used redux. It was my first time using it. It took me 8+ hours to do some research and have my code to work
+Then I added my logics to add/delete an item to favorites. I also used redux to store locally. It was my first time using it. It took me 8+ hours to do some research and have my code to work
 
 ![](Fav.png)
 
