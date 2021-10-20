@@ -145,7 +145,7 @@ export function LaunchItem({ launch }) {
 
       </Box>
       <Box display="flex" padding="2%">
-        <IconButtonFavLaunches onClick={addToFavorite} />
+        <IconButtonFavLaunches onClick={addToFavorite}  />
         <Text padding="2%" display="flex" alignItems="center" fontSize="xs">Add/Delete from favorites</Text>
       </Box>
     </Box>

@@ -21,9 +21,11 @@ export default function FavDrawerPads() {
 
   return (
     <>
-      <Button ref={btnRef} leftIcon="star" size="sm" variantColor="teal" variant="outline" float="right" onClick={onOpen}>
+    
+      <Button ref={btnRef} leftIcon="star" size="sm" variantColor="teal" variant="outline" float="right" onClick={onOpen} marginRight="25px">
         Open Favorites
       </Button>
+      
       <Drawer
         isOpen={isOpen}
         placement="right"
