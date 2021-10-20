@@ -10,8 +10,8 @@ import {
   useDisclosure,
   Button,
 } from "@chakra-ui/core";
-import {useSelector} from 'react-redux';
-import {LaunchItem} from '../launches'
+import { useSelector } from 'react-redux';
+import { LaunchItem } from '../launches'
 
 
 export default function FavDrawer() {
@@ -29,7 +29,7 @@ export default function FavDrawer() {
         placement="right"
         onClose={onClose}
         finalFocusRef={btnRef}
-        scrollBehavior={'inside'} 
+        scrollBehavior={'inside'}
         blockScrollOnMount={false}
       >
         <DrawerOverlay />
@@ -39,7 +39,7 @@ export default function FavDrawer() {
 
           <DrawerBody>
             {
-               favorites.map(launch=> <LaunchItem launch={launch}  />)
+              favorites.map(launch => <LaunchItem launch={launch} />)
             }
           </DrawerBody>
 

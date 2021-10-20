@@ -20,7 +20,7 @@ export default function Animation() {
     onRest: () => set(!flip),
   })
   return <animated.div style={props} >
- 
+
     <Text
       fontFamily="mono"
       letterSpacing="2px"

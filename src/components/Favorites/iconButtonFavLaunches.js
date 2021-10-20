@@ -7,7 +7,7 @@ export default function IconButtonFavLaunches(props) {
 
   return (
     <AnimationWrapper>
-    <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" onClick={props.onClick} />
+      <IconButton size="sm" isRound="true" aria-label="star" icon="star" width="5%" onClick={props.onClick} />
     </AnimationWrapper>
   );
 }
